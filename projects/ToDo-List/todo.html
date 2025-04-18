@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Todo App</title>
+  <link rel="stylesheet" href="todo.css">
+  <script src="https://kit.fontawesome.com/d5f22ee4f8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="ta-container">
+      <div class="heading">
+        <h1>Todo App</h1>
+        <div class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+      </div>
+      <div class="ta-wrapper">
+        <div class="input-wrapper">
+          <input type="text" id="todo-input" placeholder="Add a new task...">
+          <button id="submit">Add</button>
+        </div>
+        <div class="controls">
+          <div class="search-wrapper">
+            <input type="text" id="search-input" placeholder="Search tasks...">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="sort-wrapper">
+            <select id="sort-select">
+              <option value="all">All Tasks</option>
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
+              <option value="date">Sort by Date</option>
+            </select>
+          </div>
+        </div>
+        <div class="todo-lists">
+          <!-- Todos will be added here dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="todo.js"></script>
+</body>
+</html>

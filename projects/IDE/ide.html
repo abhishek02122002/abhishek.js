@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Code Editor</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="ide.css">
+</head>
+<body>
+    <section class="section">
+        <div class="header-container">
+            <h1><i class='bx bx-code-alt'></i> Modern Code Editor</h1>
+            <div class="btn-section">
+                <button id="btn-dark" class="mode-btn"><i class='bx bx-moon'></i> Dark</button>
+                <button id="btn-light" class="mode-btn"><i class='bx bx-sun'></i> Light</button>
+            </div>
+        </div>
+        
+        <div class="editor">
+            <div class="left">
+                <div class="code-container">
+                    <label for="html-code">HTML <i class='bx bxl-html5'></i></label>
+                    <textarea onkeyup="run()" spellcheck="false" id="html-code" placeholder="<!-- Write your HTML here -->"></textarea>
+                </div>
+                
+                <div class="code-container">
+                    <label for="css-code">CSS <i class='bx bxl-css3'></i></label>
+                    <textarea onkeyup="run()" spellcheck="false" id="css-code" placeholder="/* Write your CSS here */"></textarea>
+                </div>
+                
+                <div class="code-container">
+                    <label for="js-code">JavaScript <i class='bx bxs-file-js'></i></label>
+                    <textarea onkeyup="run()" id="js-code" spellcheck="false" placeholder="// Write your JavaScript here"></textarea>
+                </div>
+            </div>
+            
+            <div class="right">
+                <div class="output-container">
+                    <label>Output <i class='bx bx-play'></i></label>
+                    <div class="output-actions">
+                        <button id="refresh-btn" title="Refresh"><i class='bx bx-refresh'></i></button>
+                        <button id="fullscreen-btn" title="Fullscreen"><i class='bx bx-fullscreen'></i></button>
+                    </div>
+                    <iframe id="output"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="ide.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My JavaScript Projects</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My JavaScript Projects</h1>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="projects-grid" id="projects-container">
+
+        </section>
+
+        <section class="project-detail" id="project-detail" style="display: none;">
+            <div class="container">
+                <button id="back-button" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </button>
+                <div class="project-content">
+                    <h2 id="project-title"></h2>
+                    <div class="project-meta">
+                        <span id="project-date"></span>
+                        <span id="project-tech"></span>
+                    </div>
+                    <div class="project-display" id="project-display">
+                        <!-- Project will be loaded here -->
+                    </div>
+                    <div class="project-description" id="project-description"></div>
+                    <div class="project-links">
+                        <!-- Links will be added here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="profile">
+                <img src="assets/images/me.jpg" alt="Abhishek Singh" class="profile-img">
+                <div class="profile-info">
+                    <h3>Abhishek Singh</h3>
+                    <p>JavaScript Developer</p>
+                    <div class="social-links">
+                        <a href="https://github.com/abhishek02122002" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abhishekkumarsingh17/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@AbhishekSingh0212" target="_blank" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="mailto:abhishek17yt@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

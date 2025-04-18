@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background: #003300;
+  color: #00ff00;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.stopwatch {
+  position: relative;
+  width: 320px;
+  height: 120px;
+  background: #111;
+  border: 8px solid #ffcc00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px #ff0000;
+  image-rendering: pixelated;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  background: #ffcc00;
+  color: #222;
+  font-size: 14px;
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Press Start 2P", cursive;
+  border-radius: 0;
+  border: 4px solid #ff0000;
+  box-shadow: 4px 4px 0px #00ff00;
+  image-rendering: pixelated;
+}
+
+button:hover {
+  background: #ff0000;
+  color: #fff;
+  box-shadow: 4px 4px 0px #ffcc00;
+}
+
+.theme-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.theme-buttons button {
+  padding: 10px;
+  font-size: 12px;
+}
+
+#shortcut-guide {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(34, 34, 34, 0.9);
+  color: #0f0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ff0;
+  font-size: 14px;
+  display: none; /* Initially hidden */
+  z-index: 1000;
+}
+
+#shortcut-guide span {
+  font-weight: bold;
+  color: #ff0;
+}

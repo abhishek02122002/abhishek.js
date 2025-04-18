@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixelated Stopwatch</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="theme-buttons">
+      <button onclick="setTheme('theme1')">Theme 1</button>
+      <button onclick="setTheme('theme2')">Theme 2</button>
+      <button onclick="setTheme('theme3')">Theme 3</button>
+    </div>
+
+    <div class="stopwatch">
+      <span id="display">00:00.0</span>
+    </div>
+    <div class="buttons">
+      <button onclick="start()">Start</button>
+      <button onclick="stop()">Stop</button>
+      <button onclick="reset()">Reset</button>
+      <button onclick="toggleHandControl()" id="handControlButton">
+        Hand Control
+      </button>
+
+      <div id="shortcut-guide">
+        <b>Keyboard Shortcuts:</b><br />
+        <span>S</span> - Start <br />
+        <span>P</span> - Stop <br />
+        <span>R</span> - Reset <br />
+        <span>H</span> - Toggle Hand Control <br />
+        <span>?</span> - Show/Hide this guide
+      </div>
+    </div>
+    <video
+      id="video"
+      width="320"
+      height="240"
+      autoplay
+      style="display: none"
+    ></video>
+
+    <script src="script.js"></script>
+  </body>
+</html>

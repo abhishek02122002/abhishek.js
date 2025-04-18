@@ -1,0 +1,156 @@
+:root {
+     --bg-dark: #1e1e1e;
+     --text-dark: #f0f0f0;
+     --primary: #00ff00;
+     --secondary: #008000;
+     --accent: #00cc00;
+     --error: #ff5555;
+     --warning: #ffff55;
+ }
+ 
+ body {
+     margin: 0;
+     padding: 20px;
+     background-color: #333;
+     font-family: 'Courier New', monospace;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+ }
+ 
+ .terminal-window {
+     width: 800px;
+     max-width: 100%;
+     height: 500px;
+     background-color: var(--bg-dark);
+     border-radius: 8px;
+     box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .terminal-header {
+     padding: 8px 12px;
+     background-color: #2a2a2a;
+     display: flex;
+     align-items: center;
+     border-bottom: 1px solid #444;
+ }
+ 
+ .buttons {
+     display: flex;
+     gap: 8px;
+ }
+ 
+ .buttons span {
+     width: 12px;
+     height: 12px;
+     border-radius: 50%;
+     display: inline-block;
+ }
+ 
+ .close { background-color: #ff5f56; }
+ .minimize { background-color: #ffbd2e; }
+ .maximize { background-color: #27c93f; }
+ 
+ .title {
+     color: #aaa;
+     font-size: 0.9rem;
+     margin-left: 15px;
+     flex-grow: 1;
+     text-align: center;
+ }
+ 
+ .terminal-body {
+     flex-grow: 1;
+     padding: 15px;
+     color: var(--text-dark);
+     overflow-y: auto;
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .output {
+     flex-grow: 1;
+     margin-bottom: 10px;
+     line-height: 1.5;
+ }
+ 
+ .line {
+     margin-bottom: 8px;
+     white-space: pre-wrap;
+     word-break: break-word;
+ }
+ 
+ .command {
+     color: var(--primary);
+     font-weight: bold;
+ }
+ 
+ .input-line {
+     display: flex;
+     align-items: center;
+     margin-top: auto;
+ }
+ 
+ .prompt {
+     color: var(--primary);
+     margin-right: 10px;
+     white-space: nowrap;
+ }
+ 
+ .command-input {
+     flex-grow: 1;
+     background: transparent;
+     border: none;
+     color: var(--text-dark);
+     font-family: 'Courier New', monospace;
+     font-size: 1rem;
+     outline: none;
+     caret-color: var(--primary);
+ }
+ 
+ /* Terminal effects */
+ @keyframes blink {
+     0%, 100% { opacity: 1; }
+     50% { opacity: 0; }
+ }
+ 
+ .command-input::after {
+     content: "|";
+     animation: blink 1s infinite;
+ }
+ 
+ /* Themes */
+ .theme-light {
+     --bg-dark: #f0f0f0;
+     --text-dark: #333;
+     --primary: #0066cc;
+     --secondary: #004499;
+     --accent: #0055aa;
+ }
+ 
+ .theme-matrix {
+     --bg-dark: #000;
+     --text-dark: #00ff00;
+     --primary: #00ff00;
+     --secondary: #009900;
+     --accent: #00cc00;
+ }
+ 
+ /* Responsive design */
+ @media (max-width: 768px) {
+     body {
+         padding: 10px;
+     }
+     
+     .terminal-window {
+         height: 400px;
+     }
+     
+     .prompt {
+         font-size: 0.9rem;
+     }
+ }

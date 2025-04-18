@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Terminal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal-window">
+        <div class="terminal-header">
+            <div class="buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+            </div>
+            <div class="title">user@web-terminal: ~</div>
+        </div>
+        <div class="terminal-body" id="terminal">
+            <div class="output" id="output">
+                <div class="line">
+                    Welcome to the Web Terminal! Type <span class="command">help</span> to get started.
+                </div>
+            </div>
+            <div class="input-line">
+                <span class="prompt">user@web-terminal:~$</span>
+                <input type="text" class="command-input" id="command-input" autofocus>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Scientific Calculator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calculator-header">
+            <h1><i class="fas fa-calculator"></i> Scientific Calculator</h1>
+            <div class="theme-switcher">
+                <button id="light-theme"><i class="fas fa-sun"></i></button>
+                <button id="dark-theme"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+        
+        <div class="calculator-grid">
+            <div class="display-container">
+                <div class="previous-operand" id="previous-operand"></div>
+                <div class="current-operand" id="current-operand">0</div>
+            </div>
+            
+            <div class="calculator-buttons">
+                <button class="span-2" id="clear">AC</button>
+                <button id="delete">DEL</button>
+                <button class="operator" value="÷">÷</button>
+                
+                <button class="scientific" value="sin(">sin</button>
+                <button class="scientific" value="cos(">cos</button>
+                <button class="scientific" value="tan(">tan</button>
+                <button class="operator" value="*">×</button>
+                
+                <button class="scientific" value="π">π</button>
+                <button class="scientific" value="e">e</button>
+                <button class="scientific" value="^">^</button>
+                <button class="operator" value="-">-</button>
+                
+                <button class="scientific" value="√(">√</button>
+                <button class="scientific" value="log(">log</button>
+                <button class="scientific" value="ln(">ln</button>
+                <button class="operator" value="+">+</button>
+                
+                <button class="scientific" value="(">(</button>
+                <button class="scientific" value=")">)</button>
+                <button class="scientific" value="!">!</button>
+                <button class="equals span-2" id="equals">=</button>
+                
+                <button value="7">7</button>
+                <button value="8">8</button>
+                <button value="9">9</button>
+                
+                <button value="4">4</button>
+                <button value="5">5</button>
+                <button value="6">6</button>
+                
+                <button value="1">1</button>
+                <button value="2">2</button>
+                <button value="3">3</button>
+                
+                <button value="0">0</button>
+                <button value=".">.</button>
+            </div>
+        </div>
+        
+        <div class="history-container">
+            <h2><i class="fas fa-history"></i> Calculation History</h2>
+            <div class="history-list" id="history-list"></div>
+            <button id="clear-history">Clear History</button>
+        </div>
+        
+        <div class="formulas-container">
+            <h2><i class="fas fa-book"></i> Math Reference</h2>
+            <div class="formulas-tabs">
+                <button class="tab-btn active" data-tab="constants">Constants</button>
+                <button class="tab-btn" data-tab="algebra">Algebra</button>
+                <button class="tab-btn" data-tab="trigonometry">Trigonometry</button>
+                <button class="tab-btn" data-tab="calculus">Calculus</button>
+            </div>
+            
+            <div class="tab-content active" id="constants">
+                <h3>Mathematical Constants</h3>
+                <ul>
+                    <li>π (Pi) ≈ 3.141592653589793</li>
+                    <li>e (Euler's number) ≈ 2.718281828459045</li>
+                    <li>Golden Ratio (φ) ≈ 1.618033988749895</li>
+                    <li>√2 ≈ 1.4142135623730951</li>
+                </ul>
+            </div>
+            
+            <div class="tab-content" id="algebra">
+                <h3>Algebra Formulas</h3>
+                <ul>
+                    <li>Quadratic Formula: x = [-b ± √(b²-4ac)]/2a</li>
+                    <li>Binomial Theorem: (a + b)ⁿ = Σ (n choose k) aⁿ⁻ᵏbᵏ</li>
+                    <li>Exponent Rules: aᵐ × aⁿ = aᵐ⁺ⁿ, (aᵐ)ⁿ = aᵐⁿ</li>
+                    <li>Logarithm Rules: log(ab) = log a + log b</li>
+                </ul>
+            </div>
+            
+            <div class="tab-content" id="trigonometry">
+                <h3>Trigonometry Formulas</h3>
+                <ul>
+                    <li>Pythagorean: sin²θ + cos²θ = 1</li>
+                    <li>Angle Sum: sin(A+B) = sinAcosB + cosAsinB</li>
+                    <li>Law of Sines: a/sinA = b/sinB = c/sinC</li>
+                    <li>Law of Cosines: c² = a² + b² - 2abcosC</li>
+                </ul>
+            </div>
+            
+            <div class="tab-content" id="calculus">
+                <h3>Calculus Formulas</h3>
+                <ul>
+                    <li>Derivative Rules: (xⁿ)' = nxⁿ⁻¹, (eˣ)' = eˣ</li>
+                    <li>Integration: ∫xⁿ dx = xⁿ⁺¹/(n+1) + C (n≠-1)</li>
+                    <li>Fundamental Theorem: ∫ₐᵇ f'(x) dx = f(b) - f(a)</li>
+                    <li>Chain Rule: (f(g(x)))' = f'(g(x))g'(x)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

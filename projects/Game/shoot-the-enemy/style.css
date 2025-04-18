@@ -1,0 +1,116 @@
+*{   user-select: none;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     cursor:none;
+}
+.cursor{
+     position: absolute;
+     height:70px;
+     transform:translate(-50%,-50%);
+     pointer-events: none;
+     z-index:2;
+     transition: 0.3s transform ease;
+     transform-origin: 100% 100%;
+}
+
+
+body{
+     background-image: url("./desert.jpg");
+     background-position: center;
+     background-size: cover;
+     height: 100vh;
+     width: 100vw;
+     text-align:center;
+}
+
+button{
+     outline:none;
+     cursor:none;
+     color:white;
+     border:2px solid black;
+     background-color: black;
+     padding: 15px 14px;
+     font-size:1.1rem;
+     margin-top:3rem;
+     /* background: transparent; */
+}
+
+.container{
+     position: relative;
+     height: 100%;
+     width: 100%;
+     overflow: hidden;
+}
+
+.bloodSpot{
+     position: absolute;
+     height: 50px;
+     z-index:2;
+     transform:translate(-50%,-50%);
+}
+
+img::selection{
+     background:transparent;
+}
+#background{
+     /* border:2px solid red; */
+     height:15rem;
+     width:5rem;
+     position: absolute;
+     top:14rem;
+     left:1rem;
+     background-color: wheat;
+     border-radius: 23px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     gap:0.5rem;
+}
+#background > .bg{
+     height:3rem;
+     width:3rem;
+     background-color: red;
+     border:1px solid red;
+     z-index:2;
+     border-radius: 50%;
+     cursor:pointer;
+     background-size:cover;
+     background-position: center;
+}
+#desert{
+     background-image: url('./desert.jpg');
+}
+#mountain{
+     background-image: url('./mountain.jpg');
+}
+#forest{
+     background-image:url('./forest.jpg');
+}
+#city{
+     background-image: url('./city.jpg');
+}
+
+
+/*SOUND BUTTON*/
+#toggle{
+height:4rem;
+width:4rem;
+position: absolute;
+top:5rem;
+left:1rem;
+background-color: wheat;
+border-radius: 23px;
+display: flex;
+justify-content: center;
+align-items: center;
+/* flex-direction: column; */
+/* gap:0.5rem; */
+background-color: wheat;
+img{
+     width:30px;
+     
+}
+}

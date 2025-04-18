@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Playground</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🍊 Fruit & Veggie Array Methods</h1>
+            <p>Click buttons to see array methods in action!</p>
+        </header>
+
+        <div class="emoji-display" id="emoji-display">
+            <div class="original-array">
+                <h2>Original Array</h2>
+                <div class="emoji-container" id="original-array"></div>
+            </div>
+            <div class="result-array">
+                <h2>Result</h2>
+                <div class="emoji-container" id="result-array"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="method-buttons">
+                <button class="method-btn" data-method="filter">
+                    <i class="fas fa-filter"></i> filter()
+                </button>
+                <button class="method-btn" data-method="map">
+                    <i class="fas fa-map"></i> map()
+                </button>
+                <button class="method-btn" data-method="reduce">
+                    <i class="fas fa-compress-alt"></i> reduce()
+                </button>
+                <button class="method-btn" data-method="sort">
+                    <i class="fas fa-sort-alpha-down"></i> sort()
+                </button>
+                <button class="method-btn" data-method="find">
+                    <i class="fas fa-search"></i> find()
+                </button>
+                <button class="method-btn" data-method="some">
+                    <i class="fas fa-question"></i> some()
+                </button>
+                <button class="method-btn" data-method="every">
+                    <i class="fas fa-check-double"></i> every()
+                </button>
+                <button class="method-btn" data-method="slice">
+                    <i class="fas fa-cut"></i> slice()
+                </button>
+                <button class="method-btn" data-method="splice">
+                    <i class="fas fa-cut"></i> splice()
+                </button>
+                <button class="method-btn" data-method="concat">
+                    <i class="fas fa-link"></i> concat()
+                </button>
+            </div>
+
+            <div class="action-buttons">
+                <button id="reset-btn">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+                <button id="shuffle-btn">
+                    <i class="fas fa-random"></i> Shuffle
+                </button>
+            </div>
+        </div>
+
+        <div class="explanation" id="explanation">
+            <div class="explanation-header">
+                <h2><i class="fas fa-lightbulb"></i> Explanation</h2>
+                <div class="method-info" id="method-info"></div>
+            </div>
+            <div class="code-example" id="code-example"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

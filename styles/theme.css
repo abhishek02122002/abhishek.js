@@ -1,0 +1,25 @@
+/* Dark Theme */
+[data-theme="dark"] {
+     --primary-color: #4361ee;
+     --secondary-color: #3f37c9;
+     --text-color: #f8f9fa;
+     --bg-color: #121212;
+     --card-bg: #1e1e1e;
+     --footer-bg: #0d0d0d;
+     --footer-text: #f8f9fa;
+ }
+ 
+ [data-theme="dark"] .project-card p,
+ [data-theme="dark"] .project-meta {
+     color: #aaa;
+ }
+ 
+ [data-theme="dark"] .tech span {
+     background-color: #333;
+     color: #ddd;
+ }
+ 
+ [data-theme="dark"] .project-display {
+     background-color: #2d2d2d;
+     border-color: #444;
+ }
