@@ -136,8 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
             description: 'This project is a simple weather app build using vanilla javascript. It fetches data from API.A part of course by Love babbar',
             date: 'feb 2024',
             technologies: ['JavaScript', 'HTML', 'CSS3'],
-            thumbnail: 'assets/images/todo.png',
-            content: '<iframe src="projects/ToDO-List/todo.html" style="width:100%; height:500px; border:none;"></iframe>',
+            thumbnail: 'assets/images/weather-app.png',
+            content: '<iframe src="projects/weather-app/index.html" style="width:100%; height:500px; border:none;"></iframe>',
             links: [
                
             ]
