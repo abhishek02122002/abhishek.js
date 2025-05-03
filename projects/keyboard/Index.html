@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Virtual Keyboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="day-mode">
+    <div class="app-container">
+        <header>
+            <h1>Notes App</h1>
+            <div class="controls">
+                <button id="theme-toggle" class="btn-icon" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="help-toggle" class="btn-icon" title="Keyboard Shortcuts">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+                <button id="keyboard-toggle" class="btn">
+                    <i class="fas fa-keyboard"></i> Toggle Keyboard
+                </button>
+            </div>
+        </header>
+
+        <div class="notes-container">
+            <div class="toolbar">
+                <button class="btn" data-command="bold"><i class="fas fa-bold"></i></button>
+                <button class="btn" data-command="italic"><i class="fas fa-italic"></i></button>
+                <button class="btn" data-command="underline"><i class="fas fa-underline"></i></button>
+                <select id="font-select" class="btn">
+                    <option value="Arial">Arial</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Verdana">Verdana</option>
+                </select>
+                <input type="color" id="color-picker" value="#000000" class="btn">
+            </div>
+            <div id="notes-area" contenteditable="true" placeholder="Start typing here..."></div>
+        </div>
+
+        <div class="virtual-keyboard">
+            <div class="keyboard-row">
+                <div class="key" data-key="`">`</div>
+                <div class="key" data-key="1">1</div>
+                <div class="key" data-key="2">2</div>
+                <div class="key" data-key="3">3</div>
+                <div class="key" data-key="4">4</div>
+                <div class="key" data-key="5">5</div>
+                <div class="key" data-key="6">6</div>
+                <div class="key" data-key="7">7</div>
+                <div class="key" data-key="8">8</div>
+                <div class="key" data-key="9">9</div>
+                <div class="key" data-key="0">0</div>
+                <div class="key" data-key="-">-</div>
+                <div class="key" data-key="=">=</div>
+                <div class="key key-backspace" data-key="Backspace"><i class="fas fa-backspace"></i></div>
+            </div>
+            
+            <div class="keyboard-row">
+                <div class="key key-tab" data-key="Tab">Tab</div>
+                <div class="key" data-key="q">Q</div>
+                <div class="key" data-key="w">W</div>
+                <div class="key" data-key="e">E</div>
+                <div class="key" data-key="r">R</div>
+                <div class="key" data-key="t">T</div>
+                <div class="key" data-key="y">Y</div>
+                <div class="key" data-key="u">U</div>
+                <div class="key" data-key="i">I</div>
+                <div class="key" data-key="o">O</div>
+                <div class="key" data-key="p">P</div>
+                <div class="key" data-key="[">[</div>
+                <div class="key" data-key="]">]</div>
+                <div class="key" data-key="\\">\</div>
+            </div>
+            
+            <div class="keyboard-row">
+                <div class="key key-caps" data-key="CapsLock">Caps</div>
+                <div class="key" data-key="a">A</div>
+                <div class="key" data-key="s">S</div>
+                <div class="key" data-key="d">D</div>
+                <div class="key" data-key="f">F</div>
+                <div class="key" data-key="g">G</div>
+                <div class="key" data-key="h">H</div>
+                <div class="key" data-key="j">J</div>
+                <div class="key" data-key="k">K</div>
+                <div class="key" data-key="l">L</div>
+                <div class="key" data-key=";">;</div>
+                <div class="key" data-key="'">'</div>
+                <div class="key key-enter" data-key="Enter">Enter</div>
+            </div>
+            
+            <div class="keyboard-row">
+                <div class="key key-shift-left" data-key="Shift">Shift</div>
+                <div class="key" data-key="z">Z</div>
+                <div class="key" data-key="x">X</div>
+                <div class="key" data-key="c">C</div>
+                <div class="key" data-key="v">V</div>
+                <div class="key" data-key="b">B</div>
+                <div class="key" data-key="n">N</div>
+                <div class="key" data-key="m">M</div>
+                <div class="key" data-key=",">,</div>
+                <div class="key" data-key=".">.</div>
+                <div class="key" data-key="/">/</div>
+                <div class="key key-shift-right" data-key="Shift">Shift</div>
+            </div>
+            
+            <div class="keyboard-row">
+                <div class="key key-ctrl" data-key="Control">Ctrl</div>
+                <div class="key key-win" data-key="Meta"><i class="fab fa-windows"></i></div>
+                <div class="key key-alt" data-key="Alt">Alt</div>
+                <div class="key key-space" data-key=" ">Space</div>
+                <div class="key key-alt" data-key="Alt">Alt</div>
+                <div class="key key-fn" data-key="Fn">Fn</div>
+                <div class="key key-ctrl" data-key="Control">Ctrl</div>
+            </div>
+        </div>
+
+        <div id="shortcuts-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Keyboard Shortcuts</h2>
+                <div class="shortcuts-grid">
+                    <div class="shortcut-item">
+                        <span class="shortcut-key">Ctrl + B</span>
+                        <span class="shortcut-desc">Bold text</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="shortcut-key">Ctrl + I</span>
+                        <span class="shortcut-desc">Italic text</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="shortcut-key">Ctrl + U</span>
+                        <span class="shortcut-desc">Underline text</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="shortcut-key">Ctrl + N</span>
+                        <span class="shortcut-desc">New note</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="shortcut-key">Ctrl + S</span>
+                        <span class="shortcut-desc">Save note</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="shortcut-key">Ctrl + D</span>
+                        <span class="shortcut-desc">Toggle day/night mode</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="shortcut-key">Ctrl + K</span>
+                        <span class="shortcut-desc">Toggle virtual keyboard</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="shortcut-key">Ctrl + H</span>
+                        <span class="shortcut-desc">Show shortcuts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

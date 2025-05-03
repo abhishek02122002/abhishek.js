@@ -1,13 +1,13 @@
 /* Base Styles */
 :root {
-     --primary-color: #4361ee;
-     --secondary-color: #3f37c9;
-     --text-color: #333;
-     --bg-color: #f8f9fa;
-     --card-bg: #fff;
-     --footer-bg: #2b2d42;
-     --footer-text: #f8f9fa;
- }
+    --primary-color: #6C5CE7;      
+    --secondary-color: #00CEC9;   
+    --text-color: #2D3436;        
+    --bg-color: #F5F6FA;         
+    --card-bg: #FFFFFF;           
+    --footer-bg: #2D3436;       
+    --footer-text: #DFE6E9;      
+}
  
  * {
      margin: 0;
@@ -115,7 +115,7 @@
      color: #495057;
  }
  
- /* Project Detail */
+ 
  .project-detail {
      padding: 3rem 0;
  }
@@ -255,3 +255,5 @@
          gap: 0.5rem;
      }
  }
+
+ 

@@ -1,12 +1,13 @@
 /* Dark Theme */
 [data-theme="dark"] {
-     --primary-color: #4361ee;
-     --secondary-color: #3f37c9;
-     --text-color: #f8f9fa;
-     --bg-color: #121212;
-     --card-bg: #1e1e1e;
-     --footer-bg: #0d0d0d;
-     --footer-text: #f8f9fa;
+    --primary-color: #A55EEA;     
+    --secondary-color: #00D8D6;  
+    --text-color: #E8F0F2;        
+    --bg-color: #1E272C;         
+    --card-bg: #2D3436;          
+    --footer-bg: #1A1A1A;       
+    --footer-text: #B2BEC3;      
+
  }
  
  [data-theme="dark"] .project-card p,
