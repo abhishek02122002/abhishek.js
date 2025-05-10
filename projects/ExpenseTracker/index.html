@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Expense Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="toast-container" id="toast-container"></div>
+    
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-wallet"></i> Expense Tracker</h1>
+            <div class="header-controls">
+                <div class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="theme-selector">
+                    <select id="color-theme">
+                        <option value="emerald">Emerald</option>
+                        <option value="amethyst">Amethyst</option>
+                        <option value="amber">Amber</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="slate">Slate</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-piggy-bank"></i></div>
+                <h3>Total Balance</h3>
+                <p id="total-balance">$0.00</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-arrow-down"></i></div>
+                <h3>Income</h3>
+                <p id="total-income" class="positive">$0.00</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-arrow-up"></i></div>
+                <h3>Expenses</h3>
+                <p id="total-expense" class="negative">$0.00</p>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <form id="transaction-form">
+                <div class="form-group">
+                    <label for="transaction-name"><i class="fas fa-tag"></i> Name</label>
+                    <input type="text" id="transaction-name" placeholder="e.g. Salary, Rent" required>
+                </div>
+                <div class="form-group">
+                    <label for="transaction-amount"><i class="fas fa-money-bill-wave"></i> Amount</label>
+                    <input type="number" id="transaction-amount" placeholder="e.g. 100" required>
+                </div>
+                <div class="form-group">
+                    <label for="transaction-type"><i class="fas fa-exchange-alt"></i> Type</label>
+                    <select id="transaction-type" required>
+                        <option value="">Select Type</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="transaction-category"><i class="fas fa-list"></i> Category</label>
+                    <select id="transaction-category" required>
+                        <option value="">Select Category</option>
+                        <!-- Categories will be populated by JS -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="transaction-date"><i class="fas fa-calendar"></i> Date</label>
+                    <input type="date" id="transaction-date" required>
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fas fa-plus-circle"></i> Add Transaction
+                </button>
+            </form>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-card">
+                <canvas id="category-chart"></canvas>
+            </div>
+            <div class="chart-card">
+                <canvas id="monthly-chart"></canvas>
+            </div>
+        </div>
+
+        <div class="transactions-container">
+            <div class="transaction-header">
+                <h2><i class="fas fa-history"></i> Transaction History</h2>
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <i class="fas fa-filter"></i>
+                        <select id="filter-type">
+                            <option value="all">All Types</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <i class="fas fa-tags"></i>
+                        <select id="filter-category">
+                            <option value="all">All Categories</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <i class="fas fa-calendar-alt"></i>
+                        <select id="filter-month">
+                            <option value="all">All Months</option>
+                            <!-- Months will be populated by JS -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="transaction-list" id="transaction-list">
+                <!-- Transactions will be added here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

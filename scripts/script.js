@@ -177,6 +177,30 @@ document.addEventListener('DOMContentLoaded', function() {
         links: [
            
         ]
+    },
+    {
+        id: 'project13',
+        title: 'Image Editor',
+        description: 'This project is an image editor and focus mainly on advanced level of editing of an Image. ',
+        date: 'December  2024',
+        technologies: ['JavaScript', 'HTML', 'CSS3'],
+        thumbnail: 'assets/images/imageEditor.png',
+        content: '<iframe src="projects/imageEditor/index.html" style="width:100%; height:500px; border:none;"></iframe>',
+        links: [
+           
+        ]
+    },
+    {
+        id: 'project14',
+        title: 'Expense Tracker',
+        description: 'This is an advanced Expense tracker and uses many advanced features such as charts for displaying expenses.',
+        date: 'November 2024',
+        technologies: ['JavaScript','Chart.js', 'HTML', 'CSS3'],
+        thumbnail: 'assets/images/expenseTracker.png',
+        content: '<iframe src="projects/ExpenseTracker/index.html" style="width:100%; height:500px; border:none;"></iframe>',
+        links: [
+           
+        ]
     }
        
     ];

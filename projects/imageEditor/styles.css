@@ -1,0 +1,313 @@
+:root {
+     --primary-color: #4a6bff;
+     --primary-hover: #3a5bef;
+     --text-color: #333;
+     --bg-color: #f5f5f5;
+     --panel-bg: #fff;
+     --border-color: #ddd;
+     --shadow-color: rgba(0, 0, 0, 0.1);
+     --toolbar-bg: #f8f9fa;
+     --canvas-bg: #e9ecef;
+     --disabled-color: #aaa;
+ }
+ 
+ .dark-theme {
+     --primary-color: #6c8eff;
+     --primary-hover: #5a7eff;
+     --text-color: #f0f0f0;
+     --bg-color: #1a1a1a;
+     --panel-bg: #2d2d2d;
+     --border-color: #444;
+     --shadow-color: rgba(0, 0, 0, 0.3);
+     --toolbar-bg: #252525;
+     --canvas-bg: #333;
+     --disabled-color: #666;
+ }
+ 
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     transition: background-color 0.3s, color 0.3s;
+ }
+ 
+ body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     background-color: var(--bg-color);
+     color: var(--text-color);
+     height: 100vh;
+     overflow: hidden;
+ }
+ 
+ .app-container {
+     display: flex;
+     flex-direction: column;
+     height: 100vh;
+ }
+ 
+ .app-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem 2rem;
+     background-color: var(--panel-bg);
+     border-bottom: 1px solid var(--border-color);
+     box-shadow: 0 2px 5px var(--shadow-color);
+     z-index: 10;
+ }
+ 
+ .app-header h1 {
+     font-size: 1.5rem;
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+ }
+ 
+ .header-controls {
+     display: flex;
+     gap: 1rem;
+ }
+ 
+ .main-content {
+     display: flex;
+     flex: 1;
+     overflow: hidden;
+ }
+ 
+ .toolbar {
+     width: 300px;
+     padding: 1.5rem;
+     background-color: var(--toolbar-bg);
+     border-right: 1px solid var(--border-color);
+     overflow-y: auto;
+ }
+ 
+ .tool-section {
+     margin-bottom: 1.5rem;
+     padding-bottom: 1.5rem;
+     border-bottom: 1px solid var(--border-color);
+ }
+ 
+ .tool-section:last-child {
+     border-bottom: none;
+     margin-bottom: 0;
+     padding-bottom: 0;
+ }
+ 
+ .tool-section h3 {
+     margin-bottom: 1rem;
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     font-size: 1rem;
+ }
+ 
+ .tool-group {
+     margin-bottom: 1rem;
+ }
+ 
+ .tool-group label {
+     display: block;
+     margin-bottom: 0.5rem;
+     font-size: 0.9rem;
+ }
+ 
+ .tool-group input[type="range"] {
+     width: 100%;
+     height: 6px;
+     border-radius: 3px;
+     background: var(--border-color);
+     outline: none;
+     -webkit-appearance: none;
+ }
+ 
+ .tool-group input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+     width: 16px;
+     height: 16px;
+     border-radius: 50%;
+     background: var(--primary-color);
+     cursor: pointer;
+ }
+ 
+ .tool-group input[type="color"] {
+     width: 100%;
+     height: 40px;
+     border: 1px solid var(--border-color);
+     border-radius: 4px;
+     background: var(--panel-bg);
+     cursor: pointer;
+ }
+ 
+ .filter-grid {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 0.5rem;
+ }
+ 
+ .filter-btn {
+     padding: 0.5rem;
+     border: 1px solid var(--border-color);
+     background: var(--panel-bg);
+     color: var(--text-color);
+     border-radius: 4px;
+     cursor: pointer;
+     font-size: 0.8rem;
+     transition: all 0.2s;
+ }
+ 
+ .filter-btn:hover {
+     background: var(--primary-color);
+     color: white;
+     border-color: var(--primary-color);
+ }
+ 
+ .drawing-mode {
+     display: flex;
+     gap: 0.5rem;
+     margin-top: 1rem;
+ }
+ 
+ .flip-buttons {
+     display: flex;
+     gap: 0.5rem;
+ }
+ 
+ .canvas-container {
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     padding: 1.5rem;
+     overflow: auto;
+ }
+ 
+ .canvas-wrapper {
+     position: relative;
+     flex: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: var(--canvas-bg);
+     border-radius: 8px;
+     box-shadow: inset 0 0 10px var(--shadow-color);
+     overflow: hidden;
+     margin-bottom: 1rem;
+ }
+ 
+ canvas {
+     max-width: 100%;
+     max-height: 100%;
+     display: block;
+     background-color: white;
+     box-shadow: 0 0 10px var(--shadow-color);
+ }
+ 
+ .drop-message {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background-color: rgba(0, 0, 0, 0.5);
+     color: white;
+     font-size: 1.5rem;
+     opacity: 0;
+     pointer-events: none;
+     transition: opacity 0.3s;
+     z-index: 20;
+ }
+ 
+ .drop-message i {
+     font-size: 3rem;
+     margin-bottom: 1rem;
+ }
+ 
+ .canvas-wrapper.drag-over .drop-message {
+     opacity: 1;
+ }
+ 
+ .canvas-controls {
+     display: flex;
+     gap: 0.5rem;
+     justify-content: center;
+ }
+ 
+ .btn {
+     padding: 0.5rem 1rem;
+     border: 1px solid var(--border-color);
+     background: var(--panel-bg);
+     color: var(--text-color);
+     border-radius: 4px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     font-size: 0.9rem;
+     transition: all 0.2s;
+ }
+ 
+ .btn:hover {
+     background: var(--primary-color);
+     color: white;
+     border-color: var(--primary-color);
+ }
+ 
+ .btn.primary {
+     background: var(--primary-color);
+     color: white;
+     border-color: var(--primary-color);
+ }
+ 
+ .btn.primary:hover {
+     background: var(--primary-hover);
+     border-color: var(--primary-hover);
+ }
+ 
+ .btn:disabled {
+     background: var(--disabled-color);
+     border-color: var(--disabled-color);
+     cursor: not-allowed;
+ }
+ 
+ .btn:disabled:hover {
+     color: var(--text-color);
+ }
+ 
+ @media (max-width: 1024px) {
+     .toolbar {
+         width: 250px;
+         padding: 1rem;
+     }
+ }
+ 
+ @media (max-width: 768px) {
+     .main-content {
+         flex-direction: column;
+     }
+     
+     .toolbar {
+         width: 100%;
+         padding: 1rem;
+         border-right: none;
+         border-bottom: 1px solid var(--border-color);
+         overflow-x: auto;
+         white-space: nowrap;
+     }
+     
+     .tool-section {
+         display: inline-block;
+         width: 250px;
+         vertical-align: top;
+         margin-right: 1rem;
+         border-bottom: none;
+         padding-bottom: 0;
+     }
+     
+     .canvas-container {
+         padding: 1rem;
+     }
+ }
